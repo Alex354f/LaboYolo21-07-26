@@ -65,7 +65,9 @@ dependencies {
     // --- LiteRT: inferencia 100% local, sin llamadas de red ---
     implementation(libs.litert)
     implementation(libs.litert.gpu)
-    implementation(libs.litert.support)
+    implementation(libs.litert.support) {
+        exclude(group = "com.google.ai.edge.litert", module = "litert-support-api")
+    }
 
     testImplementation(libs.junit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
